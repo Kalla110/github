@@ -47,10 +47,8 @@ data Repo = Repo
     repoSvnUrl :: !(Maybe URL),
     repoHomepage :: !(Maybe Text),
     repoLanguage :: !(Maybe Language),
-    repoWatchersCount :: !Int,
     repoSize :: !(Maybe Int),
     repoDefaultBranch :: !(Maybe Text),
-    repoOpenIssuesCount :: !Int,
     repoHasIssues :: !(Maybe Bool),
     repoHasProjects :: !(Maybe Bool),
     repoHasWiki :: !(Maybe Bool),
@@ -216,10 +214,8 @@ instance FromJSON Repo where
       <*> o .:? "svn_url"
       <*> o .:? "homepage"
       <*> o .:? "language"
-      <*> o .: "watchers_count"
       <*> o .:? "size"
       <*> o .:? "default_branch"
-      <*> o .: "open_issues_count"
       <*> o .:? "has_issues"
       <*> o .:? "has_projects"
       <*> o .:? "has_wiki"
