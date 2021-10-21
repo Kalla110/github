@@ -47,7 +47,6 @@ data Repo = Repo
     repoSvnUrl :: !(Maybe URL),
     repoHomepage :: !(Maybe Text),
     repoLanguage :: !(Maybe Language),
-    repoStargazersCount :: !Int,
     repoWatchersCount :: !Int,
     repoSize :: !(Maybe Int),
     repoDefaultBranch :: !(Maybe Text),
@@ -217,7 +216,6 @@ instance FromJSON Repo where
       <*> o .:? "svn_url"
       <*> o .:? "homepage"
       <*> o .:? "language"
-      <*> o .: "stargazers_count"
       <*> o .: "watchers_count"
       <*> o .:? "size"
       <*> o .:? "default_branch"
